@@ -1,3 +1,4 @@
+  
 import React from "react";
 
 const Loading = () => {
@@ -7,5 +8,4 @@ const Loading = () => {
     </main>
   );
 };
-
 export default Loading;

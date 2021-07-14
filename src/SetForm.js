@@ -1,7 +1,7 @@
 import React from "react";
-import { useGlobalContext } from "./context";
+import { useGlobalContext } from "./Context";
 
-const SetupForm = () => {
+const SetForm = () => {
   const { quiz, handleChange, handleSubmit } = useGlobalContext();
   return (
     <main>
@@ -62,4 +62,4 @@ const SetupForm = () => {
   );
 };
 
-export default SetupForm;
+export default SetForm;

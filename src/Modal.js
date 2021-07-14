@@ -1,5 +1,5 @@
 import React from "react";
-import { useGlobalContext } from "./context";
+import { useGlobalContext } from "./Context";
 
 const Modal = () => {
   const { isModalOpen, closeModal, correct, questions } = useGlobalContext();
@@ -13,7 +13,7 @@ const Modal = () => {
         <h2>Congrats!</h2>
         <p>
           You answered {((correct / questions.length) * 100).toFixed(0)} % of
-          questions correctly
+          questions
         </p>
         <button className="close-btn" onClick={closeModal}>
           Play Again
