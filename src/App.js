@@ -1,7 +1,7 @@
 import React from "react";
 import { useGlobalContext } from "./Context";
 import "./App.css";
-import SetForm from "./SetForm";
+import SetupForm from "./SetupForm";
 import Modal from "./Modal";
 import Loading from "./Loading";
 
@@ -16,7 +16,7 @@ function App() {
     checkAnswer,
   } = useGlobalContext();
   if (waiting) {
-    return <SetForm />;
+    return <SetupForm />;
   }
   if (loading) {
     return <Loading />;

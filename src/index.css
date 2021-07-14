@@ -1,13 +1,210 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+:root {
+  --radius: 0.25rem;
+  --spacing: 0.1rem;
+  --max-width: 1170px;
+  --transition: all 0.3s linear;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Fredoka One", cursive;
+  font-size: 1rem;
+  background-color: #f1f5f8;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 800px) {
+  h2 {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+  body {
+    font-size: 1rem;
+  }
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz {
+  width: 90vw;
+  max-width: var(--max-width);
+  margin: 4rem auto;
+  background: white;
+  border-radius: var(--radius);
+  padding: 3rem;
+  border: 7px solid rgb(90, 37, 100);
+}
+
+.quiz-section {
+  max-width: 500px;
+}
+
+.container h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+.answer-btn {
+  display: block;
+  width: 100%;
+  margin: 0.75rem auto;
+  background: rgb(90, 37, 100);
+  border-radius: var(--radius);
+  border-color: transparent;
+  color: white;
+  letter-spacing: var(--spacing);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: var(--transition);
+}
+
+@media screen and (min-width: 576px) {
+  .answer-btn {
+    max-width: 60%;
+  }
+}
+
+.answer-btn:hover {
+  background: rgb(141, 83, 153);
+}
+
+.correct-answer {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  text-align: right;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  color: rgb(84, 194, 84);
+}
+
+.next-question-btn,
+.close-btn,
+.submit-btn {
+  border-radius: var(--radius);
+  border-color: transparent;
+  padding: 0.25rem 0.5rem;
+  display: block;
+  width: 35%;
+  margin-left: auto;
+  margin-top: 2rem;
+  text-transform: capitalize;
+  font-weight: 700;
+  letter-spacing: var(--spacing);
+  font-size: 1rem;
+  background: #3f275e;
+  color: white;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.next-question-btn:hover {
+  background: #6d4680;
+}
+
+.clarusway-quiz h2 {
+  margin-bottom: 2rem;
+  color: rgb(90, 37, 100);
+}
+
+.form-control {
+  margin-bottom: 2rem;
+}
+
+.form-control label {
+  display: block;
+  text-transform: capitalize;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  border: none;
+  background: #f1f5f8;
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+.submit-btn:hover {
+  background: #6d4680;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 3rem;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto;
+  margin-top: 10rem;
+  border-radius: 50%;
+  border: 3px solid #ccc;
+  border-top-color: #6d4680;
+  animation: spinner 0.6s linear infinite;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.isOpen {
+  opacity: 1;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #fff;
+  width: 90vw;
+  max-width: 620px;
+  padding: 3rem;
+  border-radius: var(--radius);
+  text-align: center;
+  position: relative;
+}
+
+.modal-content p {
+  font-size: 1.5rem;
+  text-transform: none;
+}
+
+.close-btn {
+  margin-right: auto;
 }
